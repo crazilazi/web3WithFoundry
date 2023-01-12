@@ -2,26 +2,33 @@
 
 web3 development using foundry
 
-# Install foundry
+## Install foundry
 
-https://book.getfoundry.sh/getting-started/installation
+[foundry](https://book.getfoundry.sh/getting-started/installation)
 
-# Integrating foundry with VSCode
+## Integrating foundry with VSCode
 
-https://book.getfoundry.sh/config/vscode
+[vscode](https://book.getfoundry.sh/config/vscode)
 
-# Build, Test and Deploy using foundry
+## Build, Test and Deploy using foundry
+```bash
+# Build
+forge build --contracts YourContract
+ 
+# Test
+forge test
 
-- build: forge build --contracts YourContract
-- test: forge test
-- deploy: forge script .\script\YourContractScript.s.sol:YourContractScript --fork-url [Your network rpc URL] --private-key [Your private key] --broadcast
-- see more here: https://book.getfoundry.sh/reference/forge/
+# Deploy
+forge script .\script\YourContractScript.s.sol:YourContractScript --fork-url [Your network rpc URL] --private-key [Your private key] --broadcast
+```
 
-# Interact with contracts using foundry
+## Interact with contracts using foundry
+```bash
+# Call contract method
+cast call [your contract address] "getSomethingFromYourContract()(string memory)" --rpc-url [Your network rpc URL]
+```
 
-- call your contract method: cast call [your contract address] "getSomethingFromYourContract()(string memory)" --rpc-url [Your network rpc URL]
-- see more here: https://book.getfoundry.sh/reference/cast/
-
-# Run node using foundry
-
-anvil - https://book.getfoundry.sh/reference/anvil/
+## Run node using foundry
+```bash
+anvil
+```
